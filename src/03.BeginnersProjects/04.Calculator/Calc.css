@@ -1,0 +1,85 @@
+.calculator-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1b1b1b;
+  }
+  
+  .calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background: #292929;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 320px;
+  }
+  
+  .calculator .value {
+    grid-column: span 4;
+    height: 60px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    background: #1b1b1b;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .calculator .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #444;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .calculator .button:active {
+    background: #ffa31a;
+  }
+  
+  .calculator .button.clear {
+    background: #ff5c5c;
+  }
+  
+  .calculator .button.equal {
+    background: #03b1ff;
+    grid-column: span 2;
+  }
+  
+  .calculator .button.plus {
+    grid-row: span 2;
+    height: 130px;
+  }
+  
+  /* Add some hover effects */
+  .calculator .button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Better focus states for accessibility */
+  .calculator .button:focus {
+    outline: 2px solid #fff;
+    outline-offset: -2px;
+  }
+  
+  .calculator .value:focus {
+    outline: 2px solid #fff;
+    outline-offset: -2px;
+  }
+  
+  /* Ensure text is crisp */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
