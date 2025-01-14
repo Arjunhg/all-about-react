@@ -1,11 +1,11 @@
-import Testimonials from "./03.BeginnersProjects/07.Testamonails/Testimonials";
-function App() {
+import Theme from "./05.UiLibraries/1.DaisyUI/Theme"
+
+const App = () => {
   return (
-    <div>
-      <Testimonials/>
-    </div>
-  );
+    <main>
+      <Theme/>
+    </main>
+  )
 }
 
-export default App;
-
+export default App
