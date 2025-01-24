@@ -6,59 +6,53 @@ const Sidebar = () => {
     const { lists, workspaces, openListModal, openWorkspaceModal} = useTaskStore();
 
     return(
-        <div className="w-60 bg-[#F9F9F9] flex flex-col">
-            <div className="flex-1 overflow-y-auto">
-                <div className="p-4">
-                    <h3 className="text-lg font-semibold flex items-center">
+        <div className="w-72 bg-white border-r border-gray-200 flex flex-col">
+            <div className="flex-1 overflow-y-auto p-6 space-y-8">
+                <div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-4">
                         Lists
                     </h3>
-
-                    {/* Render List */}
-                    <ul>
-                        {
-                            lists.map((list, index) => (
-                                <li
-                                    key={index}
-                                    className="p-2 hover:bg-[#ccc] rounded-lg
-                                    cursor-pointer flex items-center"
-                                >
-                                    <span className="mr-2">{list.emoji}</span>
-                                    {list.name}
-                                </li>
-                            ))
-                        }
+                    <ul className="space-y-2">
+                        {lists.map((list, index) => (
+                            <li
+                                key={index}
+                                className="p-3 hover:bg-gray-50 rounded-xl
+                                cursor-pointer flex items-center group transition-all duration-200"
+                            >
+                                <span className="mr-3 text-xl">{list.emoji}</span>
+                                <span className="text-gray-700 group-hover:text-gray-900">{list.name}</span>
+                            </li>
+                        ))}
                     </ul>
-
                     <button
                         onClick={openListModal}
-                        className="flex justify-center items-center mt-[1rem]"
+                        className="mt-4 w-full flex items-center justify-center gap-2 p-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-all duration-200"
                     >
-                        <FaPlus className="mr-2"/> List
+                        <FaPlus size={14}/> Add List
                     </button>
                 </div>
 
-                <div className="p-4">
-                    <h3 className="text-lg font-semibold flex items-center">
+                <div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-4">
                         Workspaces
                     </h3>
-                    {/* Render Workspaces */}
-                    <ul>
+                    <ul className="space-y-2">
                         {workspaces.map((workspace, index) => (
-                        <li
-                            key={index}
-                            className="p-2 hover:bg-[#ccc] rounded-lg 
-                            cursor-pointer flex items-center"
-                        >
-                            <span className="mr-2">{workspace.emoji}</span>
-                            {workspace.name}
-                        </li>
+                            <li
+                                key={index}
+                                className="p-3 hover:bg-gray-50 rounded-xl
+                                cursor-pointer flex items-center group transition-all duration-200"
+                            >
+                                <span className="mr-3 text-xl">{workspace.emoji}</span>
+                                <span className="text-gray-700 group-hover:text-gray-900">{workspace.name}</span>
+                            </li>
                         ))}
                     </ul>
                     <button
                         onClick={openWorkspaceModal}
-                        className="flex justify-center items-center mt-[1rem]"
+                        className="mt-4 w-full flex items-center justify-center gap-2 p-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-all duration-200"
                     >
-                        <FaPlus className="mr-2" /> Workspace
+                        <FaPlus size={14}/> Add Workspace
                     </button>
                 </div>
             </div>
@@ -66,4 +60,4 @@ const Sidebar = () => {
     )
 }
 
-export default Sidebar; 
+export default Sidebar;

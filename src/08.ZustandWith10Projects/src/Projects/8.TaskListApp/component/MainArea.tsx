@@ -17,54 +17,46 @@ const MainArea = () => {
 
      return (
         <div className="flex-1 p-6">
-            <div className="mb-4">
+            <div className="bg-white p-6 rounded-2xl shadow-sm">
                 <input
                     type="text"
                     value={todoText}
-                    className="border border-gray-400 p-2 w-full rounded-lg"
+                    className="w-full border border-gray-200 p-4 rounded-xl mb-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                     onChange={(e) => setTodoText(e.target.value)}
                     placeholder="Add a new todo..."
                 />
-                <div className="mt-2 flex items-center">
+                <div className="flex items-center gap-4">
                     <select
                         value={selectedList}
                         onChange={(e) => setSelectedList(e.target.value)}
-                        className="border border-gray-300 p-2 rounded-lg mr-2"
+                        className="flex-1 border border-gray-200 p-3 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none appearance-none bg-white"
                     >
-                        <option value="" disabled>
-                            Select List
-                        </option>
-                        {
-                            lists.map((list, index) => (
-                                <option value={list.name} key={index}>
-                                    {list.emoji} {list.name}
-                                </option>
-                            ))
-                        }
+                        <option value="" disabled>Select List</option>
+                        {lists.map((list, index) => (
+                            <option value={list.name} key={index}>
+                                {list.emoji} {list.name}
+                            </option>
+                        ))}
                     </select>
 
                     <select
                         value={selectedWorkspace}
                         onChange={(e) => setSelectedWorkspace(e.target.value)}
-                        className="border border-gray-300 p-2 rounded-lg"
+                        className="flex-1 border border-gray-200 p-3 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none appearance-none bg-white"
                     >
-                        <option value="" disabled>
-                            Select Workspace
-                        </option>
-                        {
-                            workspaces.map((workspace, index) => (
-                                <option value={workspace.name} key={index}>
-                                    {workspace.emoji} {workspace.name}
-                                </option>
-                            ))
-                        }
+                        <option value="" disabled>Select Workspace</option>
+                        {workspaces.map((workspace, index) => (
+                            <option value={workspace.name} key={index}>
+                                {workspace.emoji} {workspace.name}
+                            </option>
+                        ))}
                     </select>
 
                     <button
                         onClick={handleAddTodo}
-                        className="bg-black text-white px-4 py-2 rounded-lg ml-4 flex items-center"
+                        className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-xl flex items-center gap-2 transition-colors duration-200"
                     >
-                        <FaPlus className="mr-2" /> Add Todo
+                        <FaPlus /> Add Todo
                     </button>
                 </div>
             </div>
