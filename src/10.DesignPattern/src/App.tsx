@@ -9,11 +9,12 @@
 // import NSGC from "./Patterns/2.ConatinerComponent/1.NotSoGoodCode/NSGC";
 
 // import UncontrolledForm from "./Patterns/3.ControlledAndUncontrolledComponents/1.UncontrolledForm/UncontrolledForm";
-import ControlledForm from "./Patterns/3.ControlledAndUncontrolledComponents/2.ControlledForm/ControlledForm";
+// import ControlledForm from "./Patterns/3.ControlledAndUncontrolledComponents/2.ControlledForm/ControlledForm";
+import Hoc from "./Patterns/4.HOC/1.HOC/Hoc";
 
 const App = () => {
   // return <CombinedSplitScreen/>
-  return <ControlledForm/>
+  return <Hoc/>
 }
 
 export default App;
