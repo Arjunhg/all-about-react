@@ -4,7 +4,8 @@ const Main = () => {
 
     return(
         <Card>
-            <Card.Title>Card Title</Card.Title>
+            {/* Reduces import  */}
+            <Card.Title>Card Title</Card.Title> 
             <Card.Content>Card Description</Card.Content>
             <Card.Footer>Card Footer</Card.Footer>
         </Card>
