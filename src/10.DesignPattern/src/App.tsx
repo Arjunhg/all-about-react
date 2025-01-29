@@ -25,7 +25,10 @@
 // import Main from "./Patterns/5.CustomHooks/4.useModal/1.WithoutCustomHook/Main";
 
 // import Main from "./Patterns/6.Factory/1.Example1/Main";
-import Main from "./Patterns/6.Factory/2.Example2/Main";
+// import Main from "./Patterns/6.Factory/2.Example2/Main";
+
+// import Main from "./Patterns/7.CompoundComponent/1.WithoutCompound/Main";
+import Main from "./Patterns/7.CompoundComponent/2.WithCompound/Main";
 
 const App = () => {
   // return <CombinedSplitScreen/>
