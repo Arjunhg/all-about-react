@@ -22,7 +22,10 @@
 // import ThemeToggle from "./Patterns/5.CustomHooks/3.useLocalStorage/1.WithoutCustomHook/ThemeToggle";
 // import ThemeToggle from "./Patterns/5.CustomHooks/3.useLocalStorage/2.WithCustomHook/ThemeToggle";
 
-import Main from "./Patterns/5.CustomHooks/4.useModal/1.WithoutCustomHook/Main";
+// import Main from "./Patterns/5.CustomHooks/4.useModal/1.WithoutCustomHook/Main";
+
+// import Main from "./Patterns/6.Factory/1.Example1/Main";
+import Main from "./Patterns/6.Factory/2.Example2/Main";
 
 const App = () => {
   // return <CombinedSplitScreen/>
