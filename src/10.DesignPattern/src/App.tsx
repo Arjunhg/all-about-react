@@ -32,7 +32,9 @@
 
 // import Main from "./Patterns/8.Slots/1.DefaultSlots/Main";
 // import Main from "./Patterns/8.Slots/2.NamesSlots/Main";
-import Main from "./Patterns/8.Slots/3.CompoundSlots/Main";
+// import Main from "./Patterns/8.Slots/3.CompoundSlots/Main";
+
+import Main from "./Patterns/9.RenderProps/Main";
 
 const App = () => {
   // return <CombinedSplitScreen/>
