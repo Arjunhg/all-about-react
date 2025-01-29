@@ -28,7 +28,11 @@
 // import Main from "./Patterns/6.Factory/2.Example2/Main";
 
 // import Main from "./Patterns/7.CompoundComponent/1.WithoutCompound/Main";
-import Main from "./Patterns/7.CompoundComponent/2.WithCompound/Main";
+// import Main from "./Patterns/7.CompoundComponent/2.WithCompound/Main";
+
+// import Main from "./Patterns/8.Slots/1.DefaultSlots/Main";
+// import Main from "./Patterns/8.Slots/2.NamesSlots/Main";
+import Main from "./Patterns/8.Slots/3.CompoundSlots/Main";
 
 const App = () => {
   // return <CombinedSplitScreen/>
