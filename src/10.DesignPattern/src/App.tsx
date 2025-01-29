@@ -10,11 +10,23 @@
 
 // import UncontrolledForm from "./Patterns/3.ControlledAndUncontrolledComponents/1.UncontrolledForm/UncontrolledForm";
 // import ControlledForm from "./Patterns/3.ControlledAndUncontrolledComponents/2.ControlledForm/ControlledForm";
-import Hoc from "./Patterns/4.HOC/1.HOC/Hoc";
+// import Hoc from "./Patterns/4.HOC/1.HOC/Hoc";
+
+// import WithoutCustomHook from "./Patterns/5.CustomHooks/1.useFetch/1.WithoutCustomHook/WithoutCustomHook";
+// import WithCustomHook from "./Patterns/5.CustomHooks/1.useFetch/2.WithCustomHook/WithCustomHook";
+
+// import MyForm from "./Patterns/5.CustomHooks/2.useForm/1.WithoutCustomHook/MyForm";
+// import MyForm from "./Patterns/5.CustomHooks/2.useForm/2.WithCustomHook/MyForm";
+// import RefactorForm from "./Patterns/5.CustomHooks/2.useForm/3.Refactor/RefactorForm";
+
+// import ThemeToggle from "./Patterns/5.CustomHooks/3.useLocalStorage/1.WithoutCustomHook/ThemeToggle";
+// import ThemeToggle from "./Patterns/5.CustomHooks/3.useLocalStorage/2.WithCustomHook/ThemeToggle";
+
+import Main from "./Patterns/5.CustomHooks/4.useModal/1.WithoutCustomHook/Main";
 
 const App = () => {
   // return <CombinedSplitScreen/>
-  return <Hoc/>
+  return <Main/>
 }
 
 export default App;
