@@ -1,0 +1,21 @@
+{
+  "name": "06reduxwithreact",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "redux": "^5.0.1"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}
