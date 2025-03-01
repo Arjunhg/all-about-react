@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { increaseQuantity, decreaseQuantity } from "../store/cartReducer";
+import { increaseQuantity, decreaseQuantity, removeCartItem } from "../store/slices/cartSlice";
 
 export default function CartItem({
     productId,
@@ -33,7 +33,7 @@ export default function CartItem({
             {/* Quantity Controls */}
             <div className="flex items-center space-x-3 mx-4">
                 <button 
-                    onClick={() => dispatch(decreaseQuantity(productId))}
+                    onClick={() => dispatch(decreaseQuantity({productId}))}
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
                 >
                     -
@@ -42,11 +42,12 @@ export default function CartItem({
                     {quantity}
                 </span>
                 <button 
-                    onClick={() => dispatch(increaseQuantity(productId))}
+                    onClick={() => dispatch(increaseQuantity({productId}))}
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
                 >
                     +
                 </button>
+                <button onClick={() => dispatch(removeCartItem({productId}))}>Remove Item</button>
             </div>
 
             {/* Total Price */}

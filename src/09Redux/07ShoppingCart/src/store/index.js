@@ -1,8 +1,9 @@
 import { combineReducers, createStore } from "redux";
-import cartReducer from "./cartReducer";
-import productReducer from "./productReducer";
-import wishListReducer from "./wishListReducer";
+import cartReducer from "./slices/cartSlice";
+import productReducer from "./slices/productSlice";
+import wishListReducer from "./slices/wishListSlice";
 import {produce} from 'immer';
+import { configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
     cart: cartReducer,
@@ -10,7 +11,8 @@ const rootReducer = combineReducers({
     wishList: wishListReducer,
 })
 
-export const store = createStore(rootReducer, window.___REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+// export const store = createStore(rootReducer, window.___REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+export const store = configureStore({reducer: rootReducer});
 
 // console.log(store.getState());
 
