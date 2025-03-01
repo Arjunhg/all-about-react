@@ -2,7 +2,10 @@ import { useSelector } from 'react-redux'
 import Product from '../components/Product.jsx'
 
 export default function Home() {
-  const productsList = useSelector((state) => state.products)
+  const productsList = useSelector((state) => state.products);
+
+  // useSelector((state) => console.log(state)); check redux state
+  // useSelector(console.log)
   
   return (
     <div className="container mx-auto px-4 py-8">
