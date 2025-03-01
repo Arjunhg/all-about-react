@@ -142,8 +142,8 @@ const slice = createSlice({
 })
 // slice creates it's own reducer, action creators
 
-console.log(slice.actions);
-console.log(slice.actions.addToCart());
+// console.log(slice.actions);
+// console.log(slice.actions.addToCart());
 // console.log(slice.reducer);
 
 export const {addToCart, removeCartItem, increaseQuantity, decreaseQuantity} = slice.actions;

@@ -4,6 +4,7 @@ import productReducer from "./slices/productSlice";
 import wishListReducer from "./slices/wishListSlice";
 import {produce} from 'immer';
 import { configureStore } from "@reduxjs/toolkit";
+import { logger } from "../middleware/logges";
 
 const rootReducer = combineReducers({
     cart: cartReducer,
@@ -11,8 +12,28 @@ const rootReducer = combineReducers({
     wishList: wishListReducer,
 })
 
+/*
+function logger(store){
+    return function(next){
+        return function(action){
+            console.log("Store",store);
+            console.log("Next",next);
+            console.log("Action",action);
+            next(action);
+        }
+    }
+}
+*/
+
+
 // export const store = createStore(rootReducer, window.___REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-export const store = configureStore({reducer: rootReducer});
+export const store = configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => {
+        console.log("Middleware",getDefaultMiddleware());
+        return getDefaultMiddleware().concat(logger);
+    }
+});
 
 // console.log(store.getState());
 
@@ -45,8 +66,8 @@ console.log("Dummy is:",dummy);
 */
 
 
-const dummy = produce(user, (userCopy) => {
-    userCopy[1].age = 20;
-})
-console.log("Dummy is:",dummy);
-console.log("Orignal is:",user);
+// const dummy = produce(user, (userCopy) => {
+//     userCopy[1].age = 20;
+// })
+// console.log("Dummy is:",dummy);
+// console.log("Orignal is:",user);
