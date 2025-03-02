@@ -30,7 +30,7 @@ function logger(store){
 export const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => {
-        console.log("Middleware",getDefaultMiddleware());
+        // console.log("Middleware",getDefaultMiddleware());
         return getDefaultMiddleware().concat(logger);
     }
 });

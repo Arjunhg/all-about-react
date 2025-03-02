@@ -1,8 +1,25 @@
 import { Link } from '@tanstack/react-router'
+import { useEffect } from 'react'
 // import CartIcon from 'cart-icon.svg'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchError, fetchProducts, updateAllproducts } from '../store/slices/productSlice';
+// import { productsList } from '../store/productList.js'
 
 export default function Header() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+    fetch('https://fakestoreapi.com/products').then(res => res.json()).then(data => {
+      console.log(data);
+      dispatch(updateAllproducts(data));
+    }).catch(() => {
+      dispatch(fetchError());
+    })
+    // dispatch(updateAllproducts(productsList))
+  }, [])
+
   const cartItems = useSelector((state) => state.cart)
 
   return (
