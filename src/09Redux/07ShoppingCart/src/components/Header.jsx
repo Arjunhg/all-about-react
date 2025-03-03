@@ -9,6 +9,7 @@ export default function Header() {
 
   const dispatch = useDispatch();
 
+  /*
   useEffect(() => {
     dispatch(fetchProducts());
     fetch('https://fakestoreapi.com/products').then(res => res.json()).then(data => {
@@ -19,6 +20,25 @@ export default function Header() {
     })
     // dispatch(updateAllproducts(productsList))
   }, [])
+  */
+
+  useEffect(() => {
+    dispatch({
+      type: 'api/makeCall',
+      payload: {
+        url: 'products',
+        onStart: fetchProducts.type,
+        onSuccessType: updateAllproducts.type,
+        // onSuccessType: updateAllproducts not valid
+        // onSuccessType: updateAllproducts(data); not valid
+        /*
+          // : Beacuse updateAllproducts(data) is directly calling the action creator and the action creator returns action object that contains type and payload. Type is 'product/updateAllproducts' and payload is data. But this data must come from api. And since in this useEffect we are not making any api request we won't have access to data and hence code breaks. So we first need to catch this 'api/makeCall' action object in apiMiddleware and then make api request.
+         */
+        onError: fetchError.type
+      }
+    })
+  }, [dispatch])
+  // Or make export const fetchData = (payload) => ({type: 'api/makeCall', payload}) in apiMiddleware.js and then use it here as dispatch(fetchData({url: 'products', onStart: fetchProducts.type, onSuccessType: updateAllproducts.type, onError: fetchError.type}))
 
   const cartItems = useSelector((state) => state.cart)
 

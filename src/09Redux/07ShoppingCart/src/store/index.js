@@ -2,9 +2,10 @@ import { combineReducers, createStore } from "redux";
 import cartReducer from "./slices/cartSlice";
 import productReducer from "./slices/productSlice";
 import wishListReducer from "./slices/wishListSlice";
-import {produce} from 'immer';
+// import {produce} from 'immer';
 import { configureStore } from "@reduxjs/toolkit";
-import { logger } from "../middleware/logges";
+// import { logger } from "../middleware/logges";
+import { apiMiddleware } from "../middleware/apiMiddleware";
 
 const rootReducer = combineReducers({
     cart: cartReducer,
@@ -31,7 +32,7 @@ export const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => {
         // console.log("Middleware",getDefaultMiddleware());
-        return getDefaultMiddleware().concat(logger);
+        return getDefaultMiddleware().concat(apiMiddleware);
     }
 });
 

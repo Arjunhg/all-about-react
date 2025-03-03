@@ -29,4 +29,5 @@ export const getAllProductsLoadingState = state => state.products.loading;
 export const getAllProductsError = state => state.products.error;
 
 export const {updateAllproducts, fetchProducts, fetchError} = slice.actions;
+// console.log("up is",updateAllproducts);
 export default slice.reducer;
